@@ -28,7 +28,7 @@ aws lambda create-function \
   --tenancy-config '{"TenantIsolationMode":"PER_TENANT"}'
 ```
 
-Deploy the CDK Stack
+Install dependencies and deploy the CDK Stack
 
 ```bash
 (cd src/authorizer && npm install)
