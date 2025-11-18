@@ -1,0 +1,9 @@
+{
+  "name": "authorizer",
+  "version": "0.0.1",
+  "main": "index.js",
+  "type": "module",
+  "dependencies": {
+    "jsonwebtoken": "^9.0.2"
+  }
+}

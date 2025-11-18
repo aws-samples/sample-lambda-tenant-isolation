@@ -1,0 +1,18 @@
+{
+  "name": "sample-lambda-tenant-isolation",
+  "version": "0.1.0",
+  "bin": {
+    "sample-lambda-tenant-isolation": "bin/sample-lambda-tenant-isolation.js"
+  },
+  "scripts": {
+    "build": "echo \"The build step is not required when using JavaScript!\" && exit 0",
+    "cdk": "cdk"
+  },
+  "devDependencies": {
+    "aws-cdk": "2.1030.0"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "2.215.0",
+    "constructs": "^10.0.0"
+  }
+}
