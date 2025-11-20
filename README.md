@@ -5,29 +5,6 @@ This repository demonstrates how to use Lambda Tenant Isolation mode together wi
 ## Install
 Clone this repo and use AWS CDK to provision resources in your account. Note that provisioning this stack in your account might incur costs. 
 
-Run the following AWS CLI commands to create the execution role and a function with tenant isolation mode enabled (CDK support coming soon!):
-
-```bash
-ROLE_ARN=$(aws iam create-role \
-  --role-name sample-lambda-tenant-isolation-role \
-  --assume-role-policy-document file://trust-policy.json \
-  --query "Role.Arn" \
-  --output text)
-
-aws iam attach-role-policy \
-  --role-name sample-lambda-tenant-isolation-role \
-  --policy-arn arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole
-
-aws lambda create-function \
-  --function-name sample-lambda-tenant-isolation \
-  --memory 512 \
-  --runtime nodejs22.x \
-  --role $ROLE_ARN \
-  --handler index.handler \
-  --zip-file fileb://src/multi-tenant-function/function.zip \
-  --tenancy-config '{"TenantIsolationMode":"PER_TENANT"}'
-```
-
 Install dependencies and deploy the CDK Stack
 
 ```bash
@@ -80,10 +57,9 @@ Decoded token:
 ```
 
 
-
 ## Clean up
 
-Clean up the CDK stack once you're done
+Clean up the CDK stack once you're done to avoid undesired charges. 
 
 ```
 cdk destroy
